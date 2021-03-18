@@ -29,13 +29,16 @@ namespace CardValidator
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CardNumberText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ExpiryDateText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CVVText = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Validation = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,24 +102,28 @@ namespace CardValidator
             this.CVVText.TabIndex = 5;
             this.CVVText.TextChanged += new System.EventHandler(this.CVVText_TextChanged);
             // 
-            // button1
+            // Validation
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(467, 49);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 19);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Validate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Validation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Validation.Location = new System.Drawing.Point(467, 49);
+            this.Validation.Margin = new System.Windows.Forms.Padding(2);
+            this.Validation.Name = "Validation";
+            this.Validation.Size = new System.Drawing.Size(80, 19);
+            this.Validation.TabIndex = 6;
+            this.Validation.Text = "Validate";
+            this.Validation.UseVisualStyleBackColor = true;
+            this.Validation.Click += new System.EventHandler(this.Validation_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // CardValidator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 131);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Validation);
             this.Controls.Add(this.CVVText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ExpiryDateText);
@@ -127,6 +134,7 @@ namespace CardValidator
             this.Name = "CardValidator";
             this.Text = "Validate your card";
             this.Load += new System.EventHandler(this.CardValidator_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +148,8 @@ namespace CardValidator
         private System.Windows.Forms.TextBox ExpiryDateText;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox CVVText;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Validation;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
