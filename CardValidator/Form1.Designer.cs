@@ -29,7 +29,6 @@ namespace CardValidator
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CardNumberText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,8 +36,6 @@ namespace CardValidator
             this.label3 = new System.Windows.Forms.Label();
             this.CVVText = new System.Windows.Forms.TextBox();
             this.Validation = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -114,10 +111,6 @@ namespace CardValidator
             this.Validation.UseVisualStyleBackColor = true;
             this.Validation.Click += new System.EventHandler(this.Validation_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // CardValidator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,7 +127,6 @@ namespace CardValidator
             this.Name = "CardValidator";
             this.Text = "Validate your card";
             this.Load += new System.EventHandler(this.CardValidator_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +141,6 @@ namespace CardValidator
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox CVVText;
         private System.Windows.Forms.Button Validation;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

@@ -41,16 +41,17 @@ namespace CardValidator
             {
                 MessageBox.Show("The values are correct", "Validation Complete",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CardValidator form = new CardValidator();
-                form.Refresh();
+                CardNumberText.Clear();
+                ExpiryDateText.Clear();
+                CVVText.Clear();
+
             }
 
             if (ValidationError == "error")
             {
                 MessageBox.Show("Please enter the correct values", "Validation Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CardValidator form = new CardValidator();
-                form.Refresh();
+
             }
         }
 
